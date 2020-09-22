@@ -1,0 +1,37 @@
+@import "../../variables.scss";
+.searchbar {
+  background-color: $paleblue;
+  border-radius: 30px;
+  padding: 0.5em;
+
+  input {
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color: transparent;
+    transition: $animation;
+  }
+  span {
+    height: 1em;
+    width: 1em;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+  }
+}
+:hover > input {
+  padding: 0 10px;
+  width: 400px;
+  caret-color: red;
+  transition: $animation;
+}
+:hover > span {
+  background: $paleblue;
+  color: #e74c3c;
+}

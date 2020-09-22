@@ -1,0 +1,10 @@
+@import "../../variables.scss";
+
+.list-inline-item .btn-outline-info {
+  margin-top: 2em;
+  color: $paleblue;
+  border: 1 px solid $paleblue;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  font-weight: 500;
+}
