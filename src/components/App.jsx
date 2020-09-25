@@ -1,14 +1,19 @@
 import React from "react";
 import { Provider } from "react-redux";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import store from "../reducer/store.js";
-import Header from "./Header/header.jsx";
+import Home from "./Home.jsx";
+import MovieDetail from "./MovieDetails.jsx";
 
-function App() {
+function App () {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Header />
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" component={Home} exact />
+          <Route path="/" component={MovieDetail} exact />
+        </Switch>
+      </BrowserRouter>
     </Provider>
   );
 }

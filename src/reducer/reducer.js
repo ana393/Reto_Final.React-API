@@ -2,6 +2,7 @@ import { apiActions } from "../action/actionsDef";
 
 const initState = {
   Genre: [],
+  TenPopular: [],
 };
 
 const movieReducer = (state = initState, action) => {
@@ -12,6 +13,13 @@ const movieReducer = (state = initState, action) => {
         ...state,
         Genre: action.payload,
       };
+
+    case apiActions.TENPOPULAR:
+      return {
+        ...state,
+        TenPopular: action.payload,
+      };
+
     default:
       return state;
   }
