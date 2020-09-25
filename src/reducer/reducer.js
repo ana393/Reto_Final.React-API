@@ -1,9 +1,19 @@
-//import { apiActions } from "../action/actionsDef";
+import { apiActions } from "../action/actionsDef";
 
-const initState = [];
+const initState = {
+  Genre: [],
+};
 
 const movieReducer = (state = initState, action) => {
-  console.log("reducer action: ", state);
-  return state;
+  console.log("reducer action: ", action, state);
+  switch (action.type) {
+    case apiActions.GENRE:
+      return {
+        ...state,
+        Genre: action.payload,
+      };
+    default:
+      return state;
+  }
 };
 export default movieReducer;
