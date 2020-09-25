@@ -1,12 +1,15 @@
 header {
   display: grid;
   position: absolute;
+  width: 400px;
   margin-top: 2em;
-  grid-column-start: 1;
-  grid-row-start: 1;
+  background: transparent;
   .content {
     position: relative;
-    margin-left: 2rem;
-    padding: 1em;
+    margin-left: 1rem;
+    padding: 0.5em;
+  }
+  h1 {
+    color: white;
   }
 }

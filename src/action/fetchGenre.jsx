@@ -9,7 +9,6 @@ export const fetchGenres = async (dispatch) => {
       id: g['id'],
       name: g['name']
     }))
-    console.log('Available Genres', movie)
     return dispatch({
       type: apiActions.GENRE,
       payload: movie,
@@ -28,7 +27,6 @@ export const fetchTenPopular = async (dispatch) => {
       id: t['id'],
       title: t['original_title'],
       backPoster: posterURL + t['backdrop_path'],
-      poster: posterURL + t['poster_path']
     }))
     return dispatch({
       type: apiActions.TENPOPULAR,

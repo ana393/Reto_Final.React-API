@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTenPopular } from '../../action/fetchGenre.jsx';
 import RBCarousel from 'react-bootstrap-carousel';
+import './TenPopular.scss';
+
 
 const Popular = props => {
 
@@ -10,30 +12,35 @@ const Popular = props => {
     }, [])
 
     return (
-        <div className="MainContainor">
-            <div className="row">
-                <div className="col">
-                    <RBCarousel
-                        autoplay={true}
-                        pauseOnVisibility={true}
-                        slidesshowSpeed={5000}
-                        version={4}
-                        indicators={false}
-                    >
-                        {props.TenPopular.map(item => {
-                            return (
-                                <div key={item.id} >
-                                    <div className="carousel-center"  >
-                                        <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
-                                    </div>
-                                </div>
-                            )
-                        })}
+        <section>
+            <div className="container" >
+                <div className="row">
+                    <div className="col">
+                        <RBCarousel
+                            autoplay={true}
+                            pauseOnVisibility={true}
+                            slidesshowSpeed={1000}
+                            version={4}
+                            indicators={false}
+                        >
+                            {props.TenPopular.map(item => {
+                                return (
+                                    <div className="imgContainer" key={item.id} >
+                                        <div className="carousel-center"  >
+                                            <div className="carousel-captain" >{item.title} </div>
+                                            <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
 
-                    </RBCarousel >
+                                        </div>
+
+                                    </div>
+                                )
+                            })}
+
+                        </RBCarousel >
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
