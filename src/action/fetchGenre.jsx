@@ -17,6 +17,7 @@ export const fetchGenres = async (dispatch) => {
     console.error(error);
   }
 };
+
 //Fetch first 10 popular movies 
 export const fetchTenPopular = async (dispatch) => {
   try {
@@ -36,6 +37,7 @@ export const fetchTenPopular = async (dispatch) => {
     console.error(error)
   }
 }
+
 // display movies according to genre
 export const fetchByGenres = async (dispatch, id) => {
   try {
@@ -58,6 +60,7 @@ export const fetchByGenres = async (dispatch, id) => {
     console.error(error)
   }
 }
+
 //display movie details
 export const fetchMovieDetails = async (dispatch, id) => {
   try {
@@ -80,6 +83,7 @@ export const fetchMovieDetails = async (dispatch, id) => {
     console.error(error)
   }
 }
+
 //display movie according to the searched word
 export const fetchBySearch = async (dispatch, word) => {
   try {

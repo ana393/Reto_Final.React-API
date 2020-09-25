@@ -3,6 +3,7 @@ import { apiActions } from "../action/actionsDef";
 const initState = {
   Genre: [],
   TenPopular: [],
+  MovieDetails: [],
 };
 
 const movieReducer = (state = initState, action) => {
@@ -18,6 +19,12 @@ const movieReducer = (state = initState, action) => {
       return {
         ...state,
         TenPopular: action.payload,
+      };
+
+    case apiActions.MOVIE_DETAILS:
+      return {
+        ...state,
+        MovieDetails: action.payload,
       };
 
     default:
