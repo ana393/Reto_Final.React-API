@@ -29,9 +29,75 @@ export const fetchTenPopular = async (dispatch) => {
       backPoster: posterURL + t['backdrop_path'],
     }))
     return dispatch({
-      type: apiActions.TENPOPULAR,
+      type: apiActions.MOVIES,
       payload: ten,
     });
+  } catch (error) {
+    console.error(error)
+  }
+}
+// display movies according to genre
+export const fetchByGenres = async (dispatch, id) => {
+  try {
+    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with${id}`);
+    const posterURL = 'https://image.tmdb.org/t/p/original';
+    const movieList = data['results'].map((l) => ({
+      id: l['genre_ids'],
+      title: l['original_title'],
+      overview: l['overview'],
+      popularity: l['popularity'],
+      rating: l['vote_average'],
+      backPoster: posterURL + l['backdrop_path'],
+    }))
+    return dispatch({
+      type: apiActions.MOVIES,
+      payload: movieList,
+    });
+
+  } catch (error) {
+    console.error(error)
+  }
+}
+//display movie details
+export const fetchMovieDetails = async (dispatch, id) => {
+  try {
+    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with${id}`);
+    const posterURL = 'https://image.tmdb.org/t/p/original';
+    const movieDetails = data['results'].map((l) => ({
+      id: l['id'],
+      title: l['original_title'],
+      overview: l['overview'],
+      popularity: l['popularity'],
+      rating: l['vote_average'],
+      backPoster: posterURL + l['backdrop_path'],
+    }))
+    return dispatch({
+      type: apiActions.MOVIES,
+      payload: movieDetails,
+    });
+
+  } catch (error) {
+    console.error(error)
+  }
+}
+//display movie according to the searched word
+export const fetchBySearch = async (dispatch, word) => {
+  try {
+    const { data } = await axios.get(`${url}/search/movie?api_key=${apiKey}&language=en-US-1&query=${word}`);
+    const posterURL = 'https://image.tmdb.org/t/p/original';
+    const movieList = data['results'].map((l) => ({
+      id: l['genre_ids'],
+      title: l['original_title'],
+      overview: l['overview'],
+      popularity: l['popularity'],
+      rating: l['vote_average'],
+      backPoster: posterURL + l['backdrop_path'],
+    }))
+    return dispatch({
+      type: apiActions.MOVIES,
+      payload: movieList,
+    });
+
   } catch (error) {
     console.error(error)
   }

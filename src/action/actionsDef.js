@@ -1,5 +1,5 @@
 export const apiActions = {
   GENRE: "GENRE",
-  TENPOPULAR: "TENPOPULAR",
+  MOVIES: "MOVIES",
   MOVIE_DETAILS: "MOVIE_DETAILS",
 };

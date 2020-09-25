@@ -14,7 +14,7 @@ const movieReducer = (state = initState, action) => {
         Genre: action.payload,
       };
 
-    case apiActions.TENPOPULAR:
+    case apiActions.MOVIES:
       return {
         ...state,
         TenPopular: action.payload,
