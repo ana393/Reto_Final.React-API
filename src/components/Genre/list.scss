@@ -1,10 +1,15 @@
 @import "../../variables.scss";
 
 .list-inline-item .btn-outline-info {
-  margin-top: 2em;
-  color: $paleblue;
-  border: 1 px solid $paleblue;
-  margin-bottom: 10px;
+  margin-top: 1em;
   border-radius: 25px;
   font-weight: 500;
+  border-color: $paleblue;
+  color: $paleblue;
+  border-width: 2px solid $paleblue;
+}
+.list-inline-item .btn-outline-info:hover {
+  background: black;
+  border-color: black;
+  transition: all 0.3s ease-in-out;
 }

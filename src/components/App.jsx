@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
-import store from "./reducer/store.js";
-import Header from "./components/Header/header.jsx";
+import store from "../reducer/store.js";
+import Header from "./Header/header.jsx";
 
 function App() {
   return (

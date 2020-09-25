@@ -4,7 +4,6 @@ import { fetchGenres } from '../../action/fetchGenre.jsx';
 import './list.scss';
 
 const GenreList = props => {
-
     useEffect(() => {
         props.GenresDisplay()
     }, [])
