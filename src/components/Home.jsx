@@ -1,21 +1,32 @@
 import React from 'react';
-//import RBCarousel from 'react-boostrap-carousel';
-import TenPopular from './10Popular/TenPopular.jsx';
-import Header from './Header/header.jsx';
+import RBCarousel from 'react-bootstrap-carousel';
+import Popular from './10Popular/TenPopular.jsx'
+
+
+//import Header from './Header/header.jsx';
 
 
 function Home () {
     return (
-        <main>
-            <Header />
+        <div>
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <TenPopular />
+                        <RBCarousel
+                            autoplay={true}
+                            pauseOnVisibility={true}
+                            slidesshowSpeed={5000}
+                            version={4}
+                            indicators={false}
+                        >
+                            <Popular />
+                        </RBCarousel>
                     </div>
                 </div>
-            </div>
-        </main>
+            </div >
+        </div>
+
+
 
     )
 }
