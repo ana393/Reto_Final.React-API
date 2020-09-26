@@ -1,24 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import Movie from '../Movie/Movie.jsx'
 import './Movies.scss';
 
 
 const Movies = props => {
-
     return (
-        <div className="movies">movie list
-            { props.MovieDetails.map(movie => {
-                return (
-                    <div>
-                        <h4>{movie.title}</h4>
-                    </div>
-                )
-            }
-            )}
+        <div className="movies">
+            {props.MovieDetails.map(movie => <Movie key={movie.id} movie={movie} />)}
         </div>
     )
-
 
 }
 
