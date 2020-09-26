@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { fetchByGenres } from '../../../action/fetchActions.jsx'
+
 import './Movies.scss';
 
 
 const Movies = props => {
-    useEffect(() => {
-        props.MovieList()
-    }, [])
-    console.log('List of Movies', props)
+
     return (
         <div className="movies">movie list
             { props.MovieDetails.map(movie => {
@@ -26,6 +23,5 @@ const Movies = props => {
 }
 
 const mapStateToProps = (state) => ({ MovieDetails: state.MovieDetails })
-const mapDispatchToProps = dispatch => ({ MovieList: (id) => fetchByGenres(dispatch) })
-const connectedMovies = connect(mapStateToProps, mapDispatchToProps)(Movies)
+const connectedMovies = connect(mapStateToProps, null)(Movies)
 export default connectedMovies;
