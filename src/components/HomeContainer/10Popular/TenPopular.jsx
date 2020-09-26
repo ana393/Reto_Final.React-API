@@ -9,6 +9,7 @@ const Popular = props => {
 
     useEffect(() => {
         props.TenPopularDisplay()
+        // eslint-disable-next-line 
     }, [])
 
     return (

@@ -3,16 +3,15 @@ section {
   background-color: $dark;
   padding: 0;
   margin-right: 0;
+  height: 50vw;
   .container {
     margin-right: -2em;
     width: 70vw;
   }
-  .imgContainer {
-    width: 400px;
-  }
+
   .carousel-captain {
     font-size: 40px;
     text-align: center;
-    color: coral;
+    color: $lightest;
   }
 }

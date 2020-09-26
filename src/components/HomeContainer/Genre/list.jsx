@@ -7,6 +7,7 @@ import './list.scss';
 const GenreList = props => {
     useEffect(() => {
         props.GenresDisplay()
+        // eslint-disable-next-line 
     }, [])
     const Lists = props.Genres.map(item => {
         return (

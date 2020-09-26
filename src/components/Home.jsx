@@ -5,10 +5,12 @@ import Header from './HomeContainer/Header/header.jsx';
 
 function Home () {
     return (
-        <main >
+        <div className="home">
             <Header />
             <Popular />
-        </main>
+        </div>
+
+
 
     )
 }

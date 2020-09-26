@@ -1,11 +1,12 @@
 import React from 'react';
+//import { NavLink } from 'react-router-dom';
 import Movies from './HomeContainer/Movies/Movies.jsx';
 import './MovieDetails.scss';
 
 function MovieDetail () {
     return (
         <main>
-            <h1>MovieDetail</h1>
+            <span className="home">Home</span>
             <Movies />
         </main>
 
