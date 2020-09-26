@@ -7,14 +7,22 @@ const GenreList = props => {
     useEffect(() => {
         props.GenresDisplay()
     }, [])
+    const Lists = props.Genres.map(item => {
+        return (
+            <li className="list-inline-item" key={item.id} >
+                <button className="btn btn-outline-info" type="button">{item.name} </button>
+            </li>
+        )
+    })
     return (
-        props.Genres.map(item => {
-            return (
-                <li className="list-inline-item" key={item.id} >
-                    <button className="btn btn-outline-info" type="button">{item.name} </button>
-                </li>
-            )
-        })
+        <div className="row mt-3">
+            <div className="col">
+                <ul className="list-inline">
+                    {Lists}
+                </ul>
+            </div>
+        </div>
+
     )
 }
 

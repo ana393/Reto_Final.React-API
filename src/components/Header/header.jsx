@@ -9,14 +9,7 @@ const Header = props => {
             <div className="content">
                 <h1>Enjoy Thoughtful Entertainment</h1>
                 <Search />
-                <div className="row mt-3">
-                    <div className="col">
-                        <ul className="list-inline">
-                            <GenreList />
-                        </ul>
-                    </div>
-                </div>
-
+                <GenreList />
             </div>
         </header>
     )
