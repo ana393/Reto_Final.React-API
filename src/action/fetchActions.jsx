@@ -9,6 +9,7 @@ export const fetchGenres = async (dispatch) => {
       id: g['id'],
       name: g['name']
     }))
+    console.log('Genres:', movie)
     return dispatch({
       type: apiActions.GENRE,
       payload: movie,
@@ -29,6 +30,7 @@ export const fetchTenPopular = async (dispatch) => {
       title: t['original_title'],
       backPoster: posterURL + t['backdrop_path'],
     }))
+
     return dispatch({
       type: apiActions.MOVIES,
       payload: ten,
@@ -41,7 +43,7 @@ export const fetchTenPopular = async (dispatch) => {
 // display movies according to genre
 export const fetchByGenres = async (dispatch, id) => {
   try {
-    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with${id}`);
+    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with_genres=${id}`);
     const posterURL = 'https://image.tmdb.org/t/p/original';
     const movieList = data['results'].map((l) => ({
       id: l['genre_ids'],
@@ -51,8 +53,9 @@ export const fetchByGenres = async (dispatch, id) => {
       rating: l['vote_average'],
       backPoster: posterURL + l['backdrop_path'],
     }))
+    console.log('ByGenres:', movieList)
     return dispatch({
-      type: apiActions.MOVIES,
+      type: apiActions.MOVIE_DETAILS,
       payload: movieList,
     });
 
@@ -98,7 +101,7 @@ export const fetchBySearch = async (dispatch, word) => {
       backPoster: posterURL + l['backdrop_path'],
     }))
     return dispatch({
-      type: apiActions.MOVIES,
+      type: apiActions.MOVIE,
       payload: movieList,
     });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.scss';
 import Search from '../search/search.jsx';
-import GenreList from '../../components/Genre/list.jsx';
+import GenreList from '../Genre/list.jsx';
 
 const Header = props => {
     return (

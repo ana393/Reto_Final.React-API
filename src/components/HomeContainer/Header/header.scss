@@ -1,12 +1,13 @@
+@import "../../../variables.scss";
 header {
   display: grid;
   position: absolute;
   width: 400px;
-  margin-top: 2em;
+  margin-top: 1.5em;
   background: transparent;
   .content {
     position: relative;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     padding: 0.5em;
   }
   h1 {

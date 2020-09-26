@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchTenPopular } from '../../action/fetchGenre.jsx';
+import { fetchTenPopular } from '../../../action/fetchActions.jsx';
 import RBCarousel from 'react-bootstrap-carousel';
 import './TenPopular.scss';
 
@@ -28,10 +28,8 @@ const Popular = props => {
                                     <div className="imgContainer" key={item.id} >
                                         <div className="carousel-center"  >
                                             <div className="carousel-captain" >{item.title} </div>
-                                            <img style={{ height: 600 }} src={item.backPoster} alt={item.title} />
-
+                                            <img style={{ height: 500 }} src={item.backPoster} alt={item.title} />
                                         </div>
-
                                     </div>
                                 )
                             })}

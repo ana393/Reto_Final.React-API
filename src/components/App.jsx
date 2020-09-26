@@ -13,6 +13,7 @@ function App () {
           <Route path="/" component={Home} exact />
           <Route path="/" component={MovieDetail} exact />
         </Switch>
+        <MovieDetail />
       </BrowserRouter>
     </Provider>
   );

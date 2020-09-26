@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchGenres } from '../../action/fetchGenre.jsx';
+import { NavLink } from 'react-router-dom';
+import { fetchGenres, fetchByGenres } from '../../../action/fetchActions.jsx';
 import './list.scss';
 
 const GenreList = props => {
@@ -10,8 +11,11 @@ const GenreList = props => {
     const Lists = props.Genres.map(item => {
         return (
             <li className="list-inline-item" key={item.id} >
-                <button className="btn btn-outline-info" type="button">{item.name} </button>
+                <NavLink to={`movie/${item.id}`} >
+                    <button className="btn btn-outline-info" onClick={() => props.ByGenreDisplay(item.id)} type="button">{item.name} </button>
+                </NavLink>
             </li>
+
         )
     })
     return (
@@ -29,7 +33,10 @@ const GenreList = props => {
 const mapStateToProps = state => ({
     Genres: state.Genre
 });
-const mapDispatchToProps = dispatch => ({ GenresDisplay: () => fetchGenres(dispatch) });
+const mapDispatchToProps = dispatch => ({
+    GenresDisplay: () => fetchGenres(dispatch),
+    ByGenreDisplay: (id) => fetchByGenres(dispatch, id)
+});
 const connectedByGenres = connect(mapStateToProps, mapDispatchToProps)(GenreList)
 
 export default connectedByGenres;

@@ -1,13 +1,14 @@
+@import "../../../variables.scss";
 section {
-  background: rgb(49, 48, 48);
+  background-color: $dark;
   padding: 0;
-  margin-right: -5em;
+  margin-right: 0;
   .container {
-    margin-right: 0;
-    width: 75vw;
+    margin-right: -2em;
+    width: 70vw;
   }
   .imgContainer {
-    width: 500px;
+    width: 400px;
   }
   .carousel-captain {
     font-size: 40px;
