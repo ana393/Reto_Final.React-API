@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchBySearch } from '../../../action/fetchActions.jsx';
 import './search.scss';
@@ -7,12 +7,14 @@ import { FaSearch } from 'react-icons/fa';
 const Search = props => {
     const [search, setSearch] = useState("");
 
-    useEffect(() => {
-        props.searchTitle()
-        // eslint-disable-next-line 
-    }, [])
+    const searchMovie = (e) => {
+        if (search) {
+            props.searchTitle(search);
+        }
+        setSearch("")
+    }
     const handleChange = e => {
-        setSearch(e.target.value);
+        setSearch(e.target.value.trim());
     }
     return (
         <div className="d-flex justify-content-end h-100">
@@ -22,17 +24,16 @@ const Search = props => {
                     placeholder="search..."
                     value={search}
                     onChange={handleChange}
-
                 />
-                <span ><FaSearch /></span>
+                <span onClick={() => searchMovie()}><FaSearch /></span>
             </div>
         </div>
 
     )
 }
 
-const mapStateToProps = state => ({ MovieDetails: state.MovieDetails });
+//const mapStateToProps = state => ({ MovieDetails: state.MovieDetails });
 const mapDispatchToProps = dispatch => ({ searchTitle: (word) => fetchBySearch(dispatch, word) });
 
-const connectedSearch = connect(mapStateToProps, mapDispatchToProps)(Search)
+const connectedSearch = connect(null, mapDispatchToProps)(Search)
 export default connectedSearch;

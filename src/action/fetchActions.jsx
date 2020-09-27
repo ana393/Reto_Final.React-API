@@ -93,7 +93,6 @@ export const fetchBySearch = async (dispatch, word) => {
       id: l['id'],
       title: l['original_title'],
       overview: l['overview'],
-      popularity: l['popularity'],
       rating: l['vote_average'],
       backPoster: posterURL + l['backdrop_path'],
     }))
