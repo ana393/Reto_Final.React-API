@@ -71,9 +71,8 @@ export const fetchMovieDetails = async (dispatch, id) => {
       id: l['id'],
       title: l['original_title'],
       overview: l['overview'],
-      popularity: l['popularity'],
       rating: l['vote_average'],
-      backPoster: posterURL + l['backdrop_path'],
+      Poster: posterURL + l['poster_path'],
     }))
     return dispatch({
       type: apiActions.MOVIES,
@@ -91,15 +90,16 @@ export const fetchBySearch = async (dispatch, word) => {
     const { data } = await axios.get(`${url}/search/movie?api_key=${apiKey}&language=en-US-1&query=${word}`);
     const posterURL = 'https://image.tmdb.org/t/p/original';
     const movieList = data['results'].map((l) => ({
-      id: l['genre_ids'],
+      id: l['id'],
       title: l['original_title'],
       overview: l['overview'],
       popularity: l['popularity'],
       rating: l['vote_average'],
       backPoster: posterURL + l['backdrop_path'],
     }))
+    console.log('movieList:', movieList)
     return dispatch({
-      type: apiActions.MOVIE,
+      type: apiActions.MOVIE_DETAILS,
       payload: movieList,
     });
 
