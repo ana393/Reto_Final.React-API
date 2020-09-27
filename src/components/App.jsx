@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import store from "../reducer/store.js";
 import Home from "./Home.jsx";
 import MoviesLists from "./MoviesLists.jsx";
-import MovieDetails from './HomeContainer/MovieDetails/Details.jsx'
+
 
 
 function App () {
@@ -15,7 +15,6 @@ function App () {
           <Route path="/" component={Home} exact />
           <Route path="/movie/:id" component={MoviesLists} exact />
         </Switch>
-        <MovieDetails />
       </BrowserRouter>
     </Provider>
   );

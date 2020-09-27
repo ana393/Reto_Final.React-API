@@ -13,7 +13,7 @@ const GenreList = props => {
         return (
             <li className="list-inline-item" key={item.id} >
                 <NavLink to={`movie/${item.id}`} >
-                    <button className="btn btn-outline-info" onClick={() => props.ByGenreDisplay(item.id)} type="button">{item.name} </button>
+                    <button className="btn btn-outine-info" onClick={() => props.ByGenreDisplay(item.id)} type="button">{item.name} </button>
                 </NavLink>
             </li>
 
