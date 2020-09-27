@@ -23,15 +23,15 @@
     border-radius: 50%;
     color: white;
     text-decoration: none;
+    &:hover {
+      background: $paleblue;
+      color: $light;
+    }
   }
-}
-:hover > input {
-  padding: 0 10px;
-  width: 20rem;
-  caret-color: red;
-  transition: $animation;
-}
-:hover > span {
-  background: $paleblue;
-  color: #e74c3c;
+  &:hover > input {
+    padding: 0 10px;
+    width: 20rem;
+    caret-color: $light;
+    transition: $animation;
+  }
 }
