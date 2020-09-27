@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import store from "../reducer/store.js";
 import Home from "./Home.jsx";
-import MovieDetail from "./MovieDetails.jsx";
+import MoviesLists from "./MoviesLists.jsx";
 
 function App () {
   return (
@@ -11,9 +11,9 @@ function App () {
       <BrowserRouter>
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/" component={MovieDetail} exact />
+          <Route path="/movie/:id" component={MoviesLists} exact />
         </Switch>
-        <MovieDetail />
+
       </BrowserRouter>
     </Provider>
   );

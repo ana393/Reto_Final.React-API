@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchBySearch } from '../../../action/fetchActions.jsx';
+//import Movies from '../Movies/Movies';
 import './search.scss';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Search = props => {
     const [search, setSearch] = useState("");
@@ -25,14 +27,16 @@ const Search = props => {
                     value={search}
                     onChange={handleChange}
                 />
-                <span onClick={() => searchMovie()}><FaSearch /></span>
+                <Link to="/movie/:id">
+                    <span onClick={() => searchMovie()}><FaSearch /></span>
+                </Link>
             </div>
         </div>
 
     )
 }
 
-//const mapStateToProps = state => ({ MovieDetails: state.MovieDetails });
+
 const mapDispatchToProps = dispatch => ({ searchTitle: (word) => fetchBySearch(dispatch, word) });
 
 const connectedSearch = connect(null, mapDispatchToProps)(Search)

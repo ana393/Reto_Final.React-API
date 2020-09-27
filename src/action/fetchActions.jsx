@@ -40,12 +40,13 @@ export const fetchTenPopular = async (dispatch) => {
 }
 
 // display movies according to genre
-export const fetchByGenres = async (dispatch, id) => {
+export const fetchByGenres = async (dispatch, ID) => {
   try {
-    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with_genres=${id}`);
+    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with_genres=${ID}`);
     const posterURL = 'https://image.tmdb.org/t/p/original';
     const movieList = data['results'].map((l) => ({
-      id: l['genre_ids'],
+      id: l['id'],
+      genreID: l['genre_ids'],
       title: l['original_title'],
       overview: l['overview'],
       rating: l['vote_average'],

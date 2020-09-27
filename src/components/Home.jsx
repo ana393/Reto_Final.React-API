@@ -1,6 +1,7 @@
 import React from 'react';
-import Popular from './HomeContainer/10Popular/TenPopular.jsx';
 import Header from './HomeContainer/Header/header.jsx';
+import Popular from './HomeContainer/10Popular/TenPopular.jsx';
+
 
 
 function Home () {
@@ -9,9 +10,6 @@ function Home () {
             <Header />
             <Popular />
         </div>
-
-
-
     )
 }
 export default Home;

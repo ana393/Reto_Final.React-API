@@ -6,7 +6,7 @@ import './Movies.scss';
 
 const Movies = props => {
     return (
-        <div className="moviesList">
+        <div className="moviesList" key="movie_list" id="movie_list" >
             {props.MovieDetails.map(movie => <Movie key={movie.id} movie={movie} />)}
         </div>
     )

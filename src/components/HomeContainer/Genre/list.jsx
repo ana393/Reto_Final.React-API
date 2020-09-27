@@ -36,7 +36,7 @@ const mapStateToProps = state => ({
 });
 const mapDispatchToProps = dispatch => ({
     GenresDisplay: () => fetchGenres(dispatch),
-    ByGenreDisplay: (id) => fetchByGenres(dispatch, id)
+    ByGenreDisplay: (ID) => fetchByGenres(dispatch, ID)
 });
 const connectedByGenres = connect(mapStateToProps, mapDispatchToProps)(GenreList)
 
