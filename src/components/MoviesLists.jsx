@@ -1,7 +1,7 @@
 import React from 'react';
 //import { NavLink } from 'react-router-dom';
 import Movies from './HomeContainer/Movies/Movies.jsx';
-import './MovieDetails.scss';
+import './MovieLists.scss';
 
 function MovieDetail () {
     return (

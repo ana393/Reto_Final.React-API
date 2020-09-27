@@ -46,9 +46,7 @@ export const fetchByGenres = async (dispatch, ID) => {
     const posterURL = 'https://image.tmdb.org/t/p/original';
     const movieList = data['results'].map((l) => ({
       id: l['id'],
-      genreID: l['genre_ids'],
       title: l['original_title'],
-      overview: l['overview'],
       rating: l['vote_average'],
       Poster: posterURL + l['poster_path'],
     }))
@@ -93,9 +91,8 @@ export const fetchBySearch = async (dispatch, word) => {
     const movieList = data['results'].map((l) => ({
       id: l['id'],
       title: l['original_title'],
-      overview: l['overview'],
       rating: l['vote_average'],
-      backPoster: posterURL + l['backdrop_path'],
+      Poster: posterURL + l['poster_path'],
     }))
     console.log('movieList:', movieList)
     return dispatch({
