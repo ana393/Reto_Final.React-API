@@ -26,6 +26,7 @@ const Search = props => {
                     placeholder="search..."
                     value={search}
                     onChange={handleChange}
+
                 />
                 <Link to="/movie/:id">
                     <span onClick={() => searchMovie()}><FaSearch /></span>

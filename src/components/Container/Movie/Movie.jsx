@@ -7,7 +7,7 @@ const Movie = ({ movie }) => {
             <img src={movie.Poster} alt={movie.title} />
             <h4>{movie.title}</h4>
             <p>{movie.overview} </p>
-            <p>{`Rated:${movie.rating}`} </p>
+            <p>{`Rated: ${movie.rating}`} </p>
 
         </div>
     )

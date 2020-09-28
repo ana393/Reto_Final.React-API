@@ -2,7 +2,7 @@ import React from 'react';
 import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import './Footer.scss';
 
-function Footer (props) {
+const Footer = props => {
     return (
         <div className="footer">
             <hr className="mt-5" style={{ borderTop: "2px solid #beb5b7" }} />
@@ -33,11 +33,7 @@ function Footer (props) {
                     </ul>
                 </div>
             </div>
-
         </div >
     );
-
-
-
 }
 export default Footer;
