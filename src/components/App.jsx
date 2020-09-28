@@ -2,8 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import store from "../reducer/store.js";
-import Home from "./Home.jsx";
-import MoviesLists from "./MoviesLists.jsx";
+import Home from "./Home/Home.jsx";
+import MoviesLists from "./MovieList/MoviesLists.jsx";
 
 
 

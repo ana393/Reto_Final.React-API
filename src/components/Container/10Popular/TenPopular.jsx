@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTenPopular } from '../../../action/fetchActions.jsx';
 import RBCarousel from 'react-bootstrap-carousel';
+import PopularItem from './popularItem.jsx';
 import './TenPopular.scss';
+
 
 
 const Popular = props => {
@@ -11,7 +13,6 @@ const Popular = props => {
         props.TenPopularDisplay()
         // eslint-disable-next-line 
     }, [])
-
     return (
         <section>
             <div className="container" >
@@ -24,16 +25,7 @@ const Popular = props => {
                             version={4}
                             indicators={false}
                         >
-                            {props.TenPopular.map(item => {
-                                return (
-                                    <div className="imgContainer" key={item.id} >
-                                        <div className="carousel-center"  >
-                                            <div className="carousel-captain" >{item.title} </div>
-                                            <img style={{ height: 500 }} src={item.backPoster} alt={item.title} />
-                                        </div>
-                                    </div>
-                                )
-                            })}
+                            {props.TenPopular.map(item => <PopularItem key={item} item={item} />)}
 
                         </RBCarousel >
                     </div>
