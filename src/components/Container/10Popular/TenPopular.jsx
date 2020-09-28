@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchTenPopular } from '../../../action/fetchActions.jsx';
 import RBCarousel from 'react-bootstrap-carousel';
+
 import PopularItem from './popularItem.jsx';
 import './TenPopular.scss';
 

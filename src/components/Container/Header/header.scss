@@ -4,9 +4,8 @@ header {
   margin-top: 0.5em;
   background: $dark;
   .content {
-    position: relative;
-    margin-left: 0.5rem;
     padding: 0.5em;
+    align-items: flex-start;
   }
   h1 {
     color: white;

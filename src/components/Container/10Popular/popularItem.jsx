@@ -7,6 +7,7 @@ const PopularItem = ({ item }) => {
                 <div className="carousel-captain" >{`Popular now: ${item.title}`}  </div>
                 <img style={{ height: 500 }} src={item.backPoster} alt={item.title} />
             </div>
+
         </div>
     )
 }
