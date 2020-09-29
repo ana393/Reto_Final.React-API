@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import store from "../reducer/store.js";
 import Home from "./Home/Home.jsx";
 import MoviesLists from "./MovieList/MoviesLists.jsx";
-import Footer from './Container/Footer/Footer.jsx';
+import Footer from '../components/Footer/Footer.jsx';
 import './App.scss';
 
 

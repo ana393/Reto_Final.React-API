@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../Container/Header/header.jsx';
-import Popular from '../Container/10Popular/TenPopular.jsx';
+import Header from '../../components/Header/header.jsx';
+import Popular from '../../components/10Popular/TenPopular.jsx';
 import './Home.scss';
 
 
