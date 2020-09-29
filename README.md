@@ -26,7 +26,7 @@ The app has two pages:
 
   `cd Reto_Final.React-API`
 
-  `npm instal`
+  `npm install`
 
   `npm start`
 
