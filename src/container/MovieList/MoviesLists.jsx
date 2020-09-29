@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Movies from '../Container/Movies/Movies.jsx';
+import Movies from '../../components/Movies/Movies.jsx';
 import './MovieLists.scss';
 
 function MovieDetail () {
@@ -10,8 +10,6 @@ function MovieDetail () {
                 <Link to="/">
                     <span className="home">GoToHome</span>
                 </Link></div>
-
-
             <Movies />
         </main>
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchTenPopular } from '../../../action/fetchActions.jsx';
+import { fetchTenPopular } from '../../action/fetchActions.js';
 import RBCarousel from 'react-bootstrap-carousel';
 
 import PopularItem from './popularItem.jsx';

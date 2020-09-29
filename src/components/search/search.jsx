@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { fetchBySearch } from '../../../action/fetchActions.jsx';
-//import Movies from '../Movies/Movies';
+import { fetchBySearch } from '../../action/fetchActions.js';
 import './search.scss';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -16,7 +15,7 @@ const Search = props => {
         setSearch("")
     }
     const handleChange = e => {
-        setSearch(e.target.value.trim());
+        setSearch(e.target.value);
     }
     return (
         <div className="d-flex justify-content-end h-100">

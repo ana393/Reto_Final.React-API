@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { fetchGenres, fetchByGenres } from '../../../action/fetchActions.jsx';
+import { fetchGenres, fetchByGenres } from '../../action/fetchActions.js';
 import './list.scss';
 
 const GenreList = props => {
