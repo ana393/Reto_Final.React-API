@@ -4,12 +4,14 @@ import { apiKey, url } from "./apikey";
 
 export const fetchGenres = async (dispatch) => {
   try {
-    const { data } = await axios.get(`${url}/genre/movie/list?api_key=${apiKey}&language=en-US-1`);
-    const movie = data['genres'].map((g) => ({
-      id: g['id'],
-      name: g['name']
-    }))
-    console.log('Genres:', movie)
+    const { data } = await axios.get(
+      `${url}/genre/movie/list?api_key=${apiKey}&language=en-US-1`
+    );
+    const movie = data["genres"].map((g) => ({
+      id: g["id"],
+      name: g["name"],
+    }));
+
     return dispatch({
       type: apiActions.GENRE,
       payload: movie,
@@ -19,68 +21,72 @@ export const fetchGenres = async (dispatch) => {
   }
 };
 
-//Fetch first 10 popular movies 
+//Fetch first 10 popular movies
 export const fetchTenPopular = async (dispatch) => {
   try {
-    const { data } = await axios.get(`${url}/movie/popular?api_key=${apiKey}&language=en-US-1`);
-    const posterURL = 'https://image.tmdb.org/t/p/original'
-    const ten = data['results'].slice(0, 10).map((t) => ({
-      id: t['id'],
-      title: t['original_title'],
-      backPoster: posterURL + t['backdrop_path'],
-    }))
+    const { data } = await axios.get(
+      `${url}/movie/popular?api_key=${apiKey}&language=en-US-1`
+    );
+    const posterURL = "https://image.tmdb.org/t/p/original";
+    const ten = data["results"].slice(0, 10).map((t) => ({
+      id: t["id"],
+      title: t["original_title"],
+      backPoster: posterURL + t["backdrop_path"],
+    }));
 
     return dispatch({
       type: apiActions.MOVIES,
       payload: ten,
     });
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};
 
 // display movies according to genre
 export const fetchByGenres = async (dispatch, ID) => {
   try {
-    const { data } = await axios.get(`${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with_genres=${ID}`);
-    const posterURL = 'https://image.tmdb.org/t/p/original';
-    const movieList = data['results'].map((l) => ({
-      id: l['id'],
-      title: l['original_title'],
-      rating: l['vote_average'],
-      overview: l['overview'],
-      Poster: posterURL + l['poster_path'],
-    }))
-    console.log('ByGenres:', movieList)
+    const { data } = await axios.get(
+      `${url}/discover/movie?api_key=${apiKey}&language=en-US-1&with_genres=${ID}`
+    );
+    const posterURL = "https://image.tmdb.org/t/p/original";
+    const movieList = data["results"].map((l) => ({
+      id: l["id"],
+      title: l["original_title"],
+      rating: l["vote_average"],
+      overview: l["overview"],
+      Poster: posterURL + l["poster_path"],
+    }));
+
     return dispatch({
       type: apiActions.MOVIE_DETAILS,
       payload: movieList,
     });
-
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};
 
 //display movie according to the searched word
 export const fetchBySearch = async (dispatch, word) => {
   try {
-    const { data } = await axios.get(`${url}/search/movie?api_key=${apiKey}&language=en-US-1&query=${word}`);
-    const posterURL = 'https://image.tmdb.org/t/p/original';
-    const movieList = data['results'].map((l) => ({
-      id: l['id'],
-      title: l['original_title'],
-      overview: l['overview'],
-      rating: l['vote_average'],
-      Poster: posterURL + l['poster_path'],
-    }))
-    console.log('movieList:', movieList)
+    const { data } = await axios.get(
+      `${url}/search/movie?api_key=${apiKey}&language=en-US-1&query=${word}`
+    );
+    const posterURL = "https://image.tmdb.org/t/p/original";
+    const movieList = data["results"].map((l) => ({
+      id: l["id"],
+      title: l["original_title"],
+      overview: l["overview"],
+      rating: l["vote_average"],
+      Poster: posterURL + l["poster_path"],
+    }));
+
     return dispatch({
       type: apiActions.MOVIE_DETAILS,
       payload: movieList,
     });
-
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};

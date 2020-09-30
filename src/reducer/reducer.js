@@ -7,7 +7,7 @@ const initState = {
 };
 
 const movieReducer = (state = initState, action) => {
-  console.log("reducer action: ", action, state);
+  // console.log("reducer action: ", action, state);
   switch (action.type) {
     case apiActions.GENRE:
       return {
