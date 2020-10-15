@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Reto_Final.React-API/static/css/main.621a9cec.chunk.css",
+    "main.js": "/Reto_Final.React-API/static/js/main.3521510b.chunk.js",
+    "main.js.map": "/Reto_Final.React-API/static/js/main.3521510b.chunk.js.map",
+    "runtime-main.js": "/Reto_Final.React-API/static/js/runtime-main.652a8a86.js",
+    "runtime-main.js.map": "/Reto_Final.React-API/static/js/runtime-main.652a8a86.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/Reto_Final.React-API/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.992b56a2.chunk.js": "/Reto_Final.React-API/static/js/2.992b56a2.chunk.js",
+    "static/js/2.992b56a2.chunk.js.map": "/Reto_Final.React-API/static/js/2.992b56a2.chunk.js.map",
+    "index.html": "/Reto_Final.React-API/index.html",
+    "precache-manifest.793f23da316f60a1c9ee7788bb1c0daa.js": "/Reto_Final.React-API/precache-manifest.793f23da316f60a1c9ee7788bb1c0daa.js",
+    "service-worker.js": "/Reto_Final.React-API/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/Reto_Final.React-API/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.621a9cec.chunk.css.map": "/Reto_Final.React-API/static/css/main.621a9cec.chunk.css.map",
+    "static/js/2.992b56a2.chunk.js.LICENSE.txt": "/Reto_Final.React-API/static/js/2.992b56a2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.652a8a86.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.992b56a2.chunk.js",
+    "static/css/main.621a9cec.chunk.css",
+    "static/js/main.3521510b.chunk.js"
+  ]
+}
